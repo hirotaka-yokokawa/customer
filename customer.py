@@ -5,25 +5,28 @@
 
 class Customer:
     def __init__(self, first_name, family_name, age):
+        self.entry_fee = 1000
         self.first_name = first_name
         self.family_name = family_name
         self.age = age
 
     def display_profile(self):
-        print(f"{self.first_name} {self.family_name},{self.age}")
+        return f"{self.first_name} {self.family_name},{self.age}"
 
     def entry_fee(self):
         if 20 > self.age:
-            return 1000
+            self.entry_fee = 1000
 
         if 20 <= self.age < 65:  # Pychamが綺麗にしてくれた｡神
-            return 1500
+            self.entry_fee = 1500
 
         if 65 <= self.age:
-            return 1200
+            self.entry_fee = 1200
+
+        return self.entry_fee
 
     def info_csv(self):
-        print(f"{self.display_profile()},{self.entry_fee()}")
+        return f"{self.display_profile()},{self.entry_fee}"
 
 
 if __name__ == "__main__":
