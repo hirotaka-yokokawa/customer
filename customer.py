@@ -1,11 +1,5 @@
-# 料金の計算ルール
-# こども料金(20歳未満): 1000円
-# おとな料金(20歳以上65歳未満): 1500円
-# シニア料金(65歳以上): 1200円
-
 class Customer:
     def __init__(self, first_name, family_name, age):
-        self.entry_fee = 1000
         self.first_name = first_name
         self.family_name = family_name
         self.age = age
@@ -15,18 +9,14 @@ class Customer:
 
     def entry_fee(self):
         if 20 > self.age:
-            self.entry_fee = 1000
-
+            return 1000
         if 20 <= self.age < 65:  # Pychamが綺麗にしてくれた｡神
-            self.entry_fee = 1500
-
+            return 1500
         if 65 <= self.age:
-            self.entry_fee = 1200
-
-        return self.entry_fee
+            return 1200
 
     def info_csv(self):
-        return f"{self.display_profile()},{self.entry_fee}"
+        print(self.display_profile(), self.entry_fee())
 
 
 if __name__ == "__main__":
