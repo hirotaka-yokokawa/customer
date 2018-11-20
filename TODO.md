@@ -15,11 +15,16 @@ TODO
 [x]ieyasu = Customer(first_name="Ieyasu", family_name="Tokugawa", age=73)
 [x]ieyasu.age # 73 という値を返す
 
-[]B-3
-[]ken.entry_fee()  # 1000 という値を返す
-[]tom.entry_fee() # 1500 という値を返す
-[]ieyasu.entry_fee() # 1200 という値を返す
+[x]B-3
+[x]ken.entry_fee()  # 1000 という値を返す
+[x]tom.entry_fee() # 1500 という値を返す
+[x]ieyasu.entry_fee() # 1200 という値を返す
 #料金の計算ルール
 こども料金(20歳未満): 1000円
 おとな料金(20歳以上65歳未満): 1500円
 シニア料金(65歳以上): 1200円
+
+[]B-4
+[]ken.info_csv()  # "Ken Tanaka,15,1000" という値を返す
+[]ken.info_csv()  # "Tom Ford,57,1500" という値を返す
+[]ieyasu.info_csv()  # "Ieyasu Tokugawa,73,1200" という値を返す
