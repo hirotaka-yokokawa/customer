@@ -5,7 +5,7 @@ class Customer:
         self.age = age
 
     def display_profile(self):
-        return f"{self.first_name} {self.family_name},{self.age}"
+        return f"{self.first_name} {self.family_name}, {self.age}"
 
     def entry_fee(self):
         if 20 > self.age:
