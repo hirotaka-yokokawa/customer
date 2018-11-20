@@ -1,17 +1,7 @@
-# ken = Customer(first_name="Ken", family_name="Tanaka")
-# ken.full_name()  # "Ken Tanaka" という値を返す
-#
-# tom = Customer(first_name="Tom", family_name="Ford").full_name()
-# tom.full_name()  # "Tom Ford" という値を返す
-
-# ken = Customer(first_name="Ken", family_name="Tanaka", age=15)
-# ken.age  # 15 という値を返す
-#
-# tom = Customer(first_name="Tom", family_name="Ford", age= 57)
-# tom.age # 57 という値を返す
-#
-# ieyasu = Customer(first_name="Ieyasu", family_name="Tokugawa", age=73)
-# ieyasu.age # 73 という値を返す
+# 料金の計算ルール
+# こども料金(20歳未満): 1000円
+# おとな料金(20歳以上65歳未満): 1500円
+# シニア料金(65歳以上): 1200円
 
 class Customer:
     def __init__(self,first_name, family_name, age):
@@ -23,14 +13,24 @@ class Customer:
         print(f"{self.first_name} {self.family_name} {self.age}")
 
 
+    def entry_fee(self):
+        if 20 > self.age:
+            return 1000
+
+        if 20 <= self.age < 65: #Pychamが綺麗にしてくれた｡神
+            return 1500
+
+        if 65 <= self.age:
+            return 1200
+
+
 if __name__ == "__main__":
     ken = Customer(first_name="Ken", family_name="Tanaka", age=15)
-    print(ken.age)
+    print(ken.entry_fee())
 
     tom = Customer(first_name="Tom", family_name="Ford", age=57)
-    print(tom.age)
+    print(tom.entry_fee())
 
     ieyasu = Customer(first_name="Ieyasu", family_name="Tokugawa", age=73)
-    print((ieyasu.age))
-
+    print(ieyasu.entry_fee())
 
