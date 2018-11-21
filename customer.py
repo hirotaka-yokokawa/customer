@@ -16,7 +16,7 @@ class Customer:
             return 1200
 
     def info_csv(self):
-        return self.display_profile(), self.entry_fee()
+        return f"{self.display_profile()} {self.entry_fee()}"
 
 
 if __name__ == "__main__":
