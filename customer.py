@@ -8,6 +8,8 @@ class Customer:
         return f"{self.first_name} {self.family_name}, {self.age}"
 
     def entry_fee(self):
+        if 75 <= self.age:
+            return 500
         if 3 >= self.age:
             return "free"
         if 20 > self.age:
@@ -35,4 +37,6 @@ if __name__ == "__main__":
     yokokawa = Customer(first_name="Hirotaka", family_name="Yokokawa", age=2)
     print(yokokawa.info_csv())
 
+    sugano = Customer(first_name="Keita", family_name="Sugano", age=75)
+    print(sugano.info_csv())
 
