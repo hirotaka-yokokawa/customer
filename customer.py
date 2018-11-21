@@ -4,8 +4,11 @@ class Customer:
         self.family_name = family_name
         self.age = age
 
-    def display_profile(self):
-        return f"{self.first_name} {self.family_name}|{self.age}"#無理やり感k
+    def full_name(self):
+        return f"{self.first_name} {self.family_name}"
+
+    def user_age(self):
+        return f"{self.age}"
 
     def entry_fee(self):
         if 75 <= self.age:
@@ -21,7 +24,7 @@ class Customer:
 
 
     def info_csv(self):
-        print(self.display_profile(),self.entry_fee(),sep='|')
+        print(self.full_name(), self.user_age(),self.entry_fee(), sep='|')
 
 
 if __name__ == "__main__":
